@@ -21,12 +21,18 @@ fn main() {
         };
 
         println!("You entered: {desiredterm}");
+        let mut term: u32 = 2;
+        let mut fibonacci_term2: u32 = 2;
+        let mut fibonacci_term1: u32 = 1;
+        while term < desiredterm {
+            let fibonacci_oldterm1 = fibonacci_term1;
+            fibonacci_term1 = fibonacci_term2;
+            fibonacci_term2 = fibonacci_oldterm1 + fibonacci_term2;
+            term = term +1;
+        }
 
-        let term: u32 = 0;
-
-        
+        println!("The {} term in the Fibonacci sequence is {}", desiredterm, fibonacci_term2);
         break;
-
         // match guess.cmp(&secret_number) {
         //     Ordering::Less => println!("Too small!"),
         //     Ordering::Greater => println!("Too big!"),
