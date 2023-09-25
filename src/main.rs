@@ -27,7 +27,7 @@ fn main() {
         while term < desiredterm {
             let fibonacci_oldterm1 = fibonacci_term1;
             fibonacci_term1 = fibonacci_term2;
-            fibonacci_term2 = fibonacci_oldterm1 + fibonacci_term2;
+            fibonacci_term2 =  fibonacci_term2.wrapping_add(fibonacci_oldterm1);
             term = term +1;
         }
 
