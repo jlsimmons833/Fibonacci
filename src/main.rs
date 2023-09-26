@@ -23,19 +23,22 @@ fn main() {
         println!("You entered: {desiredterm}");
         let mut term: u32 = 2;
         let mut fibonacci_term2: u64 = 1;
-        let mut fibonacci_term1: u64 = 1;
-        let mut fibonacci_oldterm1: u64 = 0;
+        
 
         match desiredterm {
             0=>fibonacci_term2=0,
             1=>fibonacci_term2=1,
             2=>fibonacci_term2=1,
-            3_u32..=u32::MAX => while term < desiredterm {
+            3_u32..=u32::MAX => {
+                let mut fibonacci_term1: u64 = 1;
+                let mut fibonacci_oldterm1: u64 = 0;
+                while term < desiredterm {
                                     fibonacci_oldterm1 = fibonacci_term1;
                                     fibonacci_term1 = fibonacci_term2;
                                     fibonacci_term2 =  fibonacci_term2.wrapping_add(fibonacci_oldterm1);
                                     term = term +1
                                 }
+                            }
         
         }
 
